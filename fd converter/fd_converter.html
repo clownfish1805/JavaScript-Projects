@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>FD CONVERTER</h2>
+    <input type="text" id="inp" placeholder="months">
+    <button onclick="fd_converter()">Convert</button>
+    <div id="result">
+
+    </div>
+    <script>
+        function fd_converter(){
+            const months=document.getElementById("inp").value;
+            let rate=0;
+
+            if(months<3){
+                rate=5.8;
+            }
+            else if(months>=3 && months<=6){
+                rate=6.5;
+            }
+            else if(months>=7 && months<=9){
+                rate=6.8
+            }
+            else{
+                rate=7;
+            }
+            let ans=document.getElementById("result");
+            ans.innerHTML="Your interest rate is " + rate + "%";
+        }
+    </script>
+</body>
+</html>

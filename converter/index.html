@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>cm to inch converter</h2>
+    <input type="text" id="value" placeholder="value in cm">
+    <button type="submit" onclick="convert()">Convert</button>
+    <div id="ans">
+        
+    </div>
+    <script>
+        function convert(){
+            let val=Number(document.getElementById("value").value);
+            let inch= val/2.54;
+            let ans = document.getElementById("ans");
+            ans.innerHTML = inch.toFixed(2) + " inches";
+        }
+    </script>
+</body>
+</html>

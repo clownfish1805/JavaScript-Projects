@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Text Counter</h2>
+    <textarea rows="10" cols="100" id="text"></textarea>
+    <button type="submit" onclick="counter()">Count text</button>
+    <div id="result">
+
+    </div>
+
+    <script>
+        function counter(){
+            let entertext = (document.getElementById("text").value);
+            let charCount=entertext.length;
+            let wordsCount= entertext.split(/\s+/).length;
+
+            let ans = "<p>Character count:"+ charCount + "</p>" 
+            + "<p>Word count:"+ wordsCount + "</p>";
+
+            document.getElementById("result").innerHTML= ans;
+        }
+    </script>
+</body>
+</html>

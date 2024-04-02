@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="heading">Color Flipper
+        <span id="color">#FFFFFF</span>
+    </div>
+    
+    <div id="wrap">
+        <div id="container">
+            <button id="btn">click me</button>
+        </div>
+    </div>
+    
+    <script>
+
+        const btn = document.getElementById("btn");
+        const colortext = document.getElementById("color");
+        const wrap = document.getElementById("wrap");
+        const hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F'];
+
+        btn.addEventListener('click', function () {
+            let hexColor = '#';
+            for (let i = 1; i <= 6; i++) {          //to make a string with 6 numbers
+                hexColor += randHexValue();         //adding the string 
+            }
+            wrap.style.backgroundColor = hexColor;
+            colortext.innerHTML = hexColor;
+        });
+
+        function randHexValue() {
+            let randomIndex = Math.floor(Math.random() * 16);  //generate a random number
+            return hex[randomIndex];       //make it a six digit 
+        }
+
+    </script>
+</body>
+</html>
